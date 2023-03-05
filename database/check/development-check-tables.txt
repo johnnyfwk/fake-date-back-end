@@ -1,0 +1,10 @@
+You are now connected to database "cotraveller" as user "johnny".
+ user_id | username  | password | avatar_url 
+---------+-----------+----------+------------
+       1 | johnny    | password | 
+       2 | abbie     | password | 
+       3 | billy     | password | 
+       4 | catherine | password | 
+       5 | david     | password | 
+(5 rows)
+
