@@ -2,17 +2,15 @@ const { users } = require("../data/development/index");
 const db = require("../connection");
 const format = require("pg-format");
 
-console.log(users, "<----- users")
-
 function seedTableUsers(users) {
     const queryValues = users.map((user) => {
-        const userArray = [user.username, user.password, user.avatarUrl];
+        const userArray = [user.username, user.password, user.avatarUrl, user.joinDate];
         return userArray;
     })
 
     const queryStringAndValues = format(`
         INSERT INTO users
-            (username, password, avatar_url)
+            (username, password, avatar_url, join_date)
         VALUES
             %L
         RETURNING *;
