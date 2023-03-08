@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
-
-app.use(express.json());
+const cors = require("cors");
 
 const {
     getUsers,
@@ -16,6 +15,10 @@ const {
     handleCustomErrors,
     handle500Errors
 } = require("./controllers/errors.controller");
+
+app.use(cors());
+
+app.use(express.json());
 
 app.get("/api/users", getUsers);
 app.get("/api/users/:user_id", getUserById);
