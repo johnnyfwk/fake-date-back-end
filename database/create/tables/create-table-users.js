@@ -5,7 +5,7 @@ function createTableUsers() {
         CREATE TABLE users (
             user_id SERIAL PRIMARY KEY,
             username VARCHAR(20),
-            password VARCHAR(20),
+            password TEXT,
             avatar_url TEXT,
             join_date VARCHAR(40)
         );
