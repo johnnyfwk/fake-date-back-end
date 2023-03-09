@@ -12,7 +12,7 @@
     "development-create-table-users": "node ./database/create/tables/create-table-users.js",
     "development-drop-table-users": "node ./database/drop/tables/drop-table-users.js",
     "development-seed-table-users": "node ./database/seed/seed-table-users.js",
-    "production-drop-create-and-seed-all-tables": "node ./database/all/drop-create-and-seed-all-tables.js"
+    "development-drop-create-and-seed-all-tables": "node ./database/all/drop-create-and-seed-all-tables.js"
   },
   "author": "",
   "license": "ISC",
