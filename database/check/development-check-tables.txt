@@ -1,10 +1,34 @@
 You are now connected to database "cotraveller" as user "johnny".
- user_id | username  | password | avatar_url 
----------+-----------+----------+------------
-       1 | johnny    | password | 
-       2 | abbie     | password | 
-       3 | billy     | password | 
-       4 | catherine | password | 
-       5 | david     | password | 
+ user_id | username  | password |                                                      avatar_url                                                      |         join_date          
+---------+-----------+----------+----------------------------------------------------------------------------------------------------------------------+----------------------------
+       1 | johnny    | password | https://thumbs.dreamstime.com/b/happy-cat-closeup-portrait-funny-smile-cardboard-young-blue-background-102078702.jpg | 2023-03-06 08:46:26.032+00
+       2 | abbie     | password | https://thumbs.dreamstime.com/b/happy-cat-closeup-portrait-funny-smile-cardboard-young-blue-background-102078702.jpg | 2023-03-06 08:47:26.032+00
+       3 | billy     | password | https://thumbs.dreamstime.com/b/happy-cat-closeup-portrait-funny-smile-cardboard-young-blue-background-102078702.jpg | 2023-03-06 08:48:26.032+00
+       4 | catherine | password | https://thumbs.dreamstime.com/b/happy-cat-closeup-portrait-funny-smile-cardboard-young-blue-background-102078702.jpg | 2023-03-06 08:49:26.032+00
+       5 | david     | password | https://thumbs.dreamstime.com/b/happy-cat-closeup-portrait-funny-smile-cardboard-young-blue-background-102078702.jpg | 2023-03-06 08:50:26.032+00
 (5 rows)
+
+ post_id |                    destination                     | arrival_date | departure_date |                                                     description                                                      | user_id 
+---------+----------------------------------------------------+--------------+----------------+----------------------------------------------------------------------------------------------------------------------+---------
+       1 | Aberdeen, Scotland, United Kingdom, 2657832        | 11/03/2023   | 18/03/2023     | Going to Aberdeen UK for a few days. Anyone going there this week?                                                   |       1
+       2 | London, England, United Kingdom, 2643743           | 20/03/2023   | 24/03/2023     | Want to check out all the tourist attractions in London later this month.                                            |       1
+       3 | Prague, Praha, Czech Republic, 3067696             | 02/04/2023   | 06/04/2023     | Got a few days to spare so going to Prague to relax. Would like to hang out with anyone who is going there in April. |       1
+       4 | Rome, Latium, Italy, 3169070                       | 10/04/2023   | 16/04/2023     | Finally going to Rome! Anyone want to eat all the lasagne with me?!                                                  |       1
+       5 | London, England, United Kingdom, 2643743           | 18/03/2023   | 22/03/2023     | Anyone want to explore this city with next week?                                                                     |       2
+       6 | Oslo, Oslo, Norway, 3143244                        | 27/03/2023   | 03/04/2023     | Anyone want to explore this city with next week?                                                                     |       2
+       7 | Paris, Île-de-France, France, 2988507              | 10/04/2023   | 14/04/2023     | Anyone want to explore this city with next week?                                                                     |       2
+       8 | Berlin, Berlin, Germany, 2950159                   | 20/04/2023   | 24/04/2023     | Anyone want to explore this city with next week?                                                                     |       2
+       9 | Rio de Janeiro, Rio de Janeiro, Brazil, 3451190    | 11/03/2023   | 30/03/2023     | Anyone want to explore this city with next week?                                                                     |       3
+      10 | Amsterdam, North Holland, Netherlands, 2759794     | 10/04/2023   | 15/04/2023     | Anyone want to explore this city with next week?                                                                     |       3
+      11 | Aberdeen, Scotland, United Kingdom, 2657832        | 15/03/2023   | 20/03/2023     | Anyone want to explore this city with next week?                                                                     |       3
+      12 | Budapest, Budapest, Hungary, 3054643               | 22/03/2023   | 27/03/2023     | Anyone want to explore this city with next week?                                                                     |       3
+      13 | Oslo, Oslo, Norway, 3143244                        | 27/03/2023   | 29/03/2023     | Anyone want to explore this city with next week?                                                                     |       4
+      14 | Hong Kong, Central and Western, Hong Kong, 1819729 | 12/03/2023   | 22/03/2023     | Anyone want to explore this city with next week?                                                                     |       4
+      15 | Barcelona, Catalonia, Spain, 3128760               | 29/03/2023   | 10/04/2023     | Anyone want to explore this city with next week?                                                                     |       4
+      16 | Copenhagen, Capital Region, Denmark, 2618425       | 20/04/2023   | 24/04/2023     | Anyone want to explore this city with next week?                                                                     |       4
+      17 | Rio de Janeiro, Rio de Janeiro, Brazil, 3451190    | 20/03/2023   | 10/04/2023     | Anyone want to explore this city with next week?                                                                     |       5
+      18 | Rome, Latium, Italy, 3169070                       | 05/04/2023   | 20/04/2023     | Anyone want to explore this city with next week?                                                                     |       5
+      19 | London, England, United Kingdom, 2643743           | 21/03/2023   | 27/03/2023     | Anyone want to explore this city with next week?                                                                     |       5
+      20 | Prague, Praha, Czech Republic, 3067696             | 27/03/2023   | 03/04/2023     | Anyone want to explore this city with next week?                                                                     |       5
+(20 rows)
 

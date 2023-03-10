@@ -11,6 +11,10 @@ const {
 } = require("./controllers/users.controller.js");
 
 const {
+    getPosts
+} = require("./controllers/posts.controller");
+
+const {
     handle404Errors,
     handleCustomErrors,
     handle500Errors
@@ -25,6 +29,8 @@ app.get("/api/users/:user_id", getUserById);
 app.post("/api/users", addUser);
 app.patch("/api/users/:user_id", editUserById);
 app.delete("/api/users/:user_id", deleteUserById);
+
+app.get("/api/posts", getPosts);
 
 app.all("*", handle404Errors);
 

@@ -12,6 +12,9 @@
     "development-create-table-users": "node ./database/create/tables/create-table-users.js",
     "development-drop-table-users": "node ./database/drop/tables/drop-table-users.js",
     "development-seed-table-users": "node ./database/seed/seed-table-users.js",
+    "development-create-table-posts": "node ./database/create/tables/create-table-posts.js",
+    "development-drop-table-posts": "node ./database/drop/tables/drop-table-posts.js",
+    "development-seed-table-posts": "node ./database/seed/seed-table-posts.js",
     "development-drop-create-and-seed-all-tables": "node ./database/all/drop-create-and-seed-all-tables.js"
   },
   "author": "",

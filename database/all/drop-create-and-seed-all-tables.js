@@ -1,6 +1,11 @@
 const db = require("../connection");
-const { users } = require("../data/development/index");
+const { users, posts } = require("../data/development/index");
 const format = require("pg-format");
+
+function dropTablePosts() {
+    return db
+        .query("DROP TABLE IF EXISTS posts;")
+}
 
 function dropTableUsers() {
     return db
@@ -15,6 +20,22 @@ function createTableUsers() {
             password VARCHAR(20),
             avatar_url TEXT,
             join_date VARCHAR(40)
+        );
+    `
+    return db
+        .query(queryString)
+}
+
+function createTablePosts() {
+    const queryString = `
+        CREATE TABLE posts (
+            post_id SERIAL PRIMARY KEY,
+            destination VARCHAR(100),
+            arrival_date VARCHAR(20),
+            departure_date VARCHAR(20),
+            description TEXT,
+            user_id INT,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
         );
     `
     return db
@@ -39,13 +60,40 @@ function seedTableUsers(users) {
         .query(queryStringAndValues)
 }
 
+function seedTablePosts(posts) {
+    const queryValues = posts.map((post) => {
+        const postArray = [post.destination, post.arrivalDate, post.departureDate, post.description, post.userId];
+        return postArray;
+    })
+
+    const queryStringAndValues = format(`
+        INSERT INTO posts
+            (destination, arrival_date, departure_date, description, user_id)
+        VALUES
+            %L
+        RETURNING *;
+    `, queryValues);
+
+    return db
+        .query(queryStringAndValues)
+}
+
 function dropCreateAndSeedAllTables() {
-    return dropTableUsers()
+    return dropTablePosts()
+        .then(() => {
+            return dropTableUsers();
+        })
         .then(() => {
             return createTableUsers();
         })
         .then(() => {
+            return createTablePosts();
+        })
+        .then(() => {
             return seedTableUsers(users);
+        })
+        .then(() => {
+            return seedTablePosts(posts);
         })
         .then(() => {
             db.end();
