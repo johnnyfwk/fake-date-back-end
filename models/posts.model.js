@@ -4,6 +4,7 @@ function getAllPosts() {
     const queryString = `
         SELECT
             posts.post_id,
+            posts.post_date,
             posts.destination,
             posts.arrival_date,
             posts.departure_date,
