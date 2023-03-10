@@ -15,7 +15,7 @@ function getAllUsers() {
 
 function getAUserById(userId) {
     if (isNaN(userId)) {
-        return Promise.reject( {status: 400, msg: "Please enter a valid user ID."} );
+        return Promise.reject({status: 400, msg: "Please enter a valid user ID."});
     }
 
     const queryString = `
@@ -29,7 +29,7 @@ function getAUserById(userId) {
         .query(queryString, queryValue)
         .then((response) => {
             if (response.rowCount === 0) {
-                return Promise.reject( {status: 404, msg: "User does not exist."} );
+                return Promise.reject({status: 404, msg: "User does not exist."});
             }
             return response.rows[0];
         })
@@ -54,12 +54,13 @@ function addAUser(newUser) {
 
 function editAUserById(userId, usersNewInfo) {
     if (isNaN(userId)) {
-        return Promise.reject( {status: 400, msg: "Please enter a valid user ID."} );
+        return Promise.reject({status: 400, msg: "Please enter a valid user ID."});
     }
 
     const queryString = `
         UPDATE users
-        SET password = $1,
+        SET
+            password = $1,
             avatar_url = $2
         WHERE user_id = $3
         RETURNING *;
@@ -70,7 +71,7 @@ function editAUserById(userId, usersNewInfo) {
         .query(queryString, queryValues)
         .then((response) => {
             if (response.rowCount === 0) {
-                return Promise.reject( {status: 404, msg: "User does not exist."} );
+                return Promise.reject({status: 404, msg: "User does not exist."});
             }
             return response.rows[0];
         })
@@ -78,7 +79,7 @@ function editAUserById(userId, usersNewInfo) {
 
 function deleteAUserById(userId) {
     if (isNaN(userId)) {
-        return Promise.reject( {status: 400, msg: "Please enter a valid user ID."} );
+        return Promise.reject({status: 400, msg: "Please enter a valid user ID."});
     }
 
     const queryString = `
@@ -92,7 +93,7 @@ function deleteAUserById(userId) {
         .query(queryString, queryValue)
         .then((response) => {
             if (response.rowCount === 0) {
-                return Promise.reject( {status: 404, msg: "User does not exist."} );
+                return Promise.reject({status: 404, msg: "User does not exist."});
             }
             return response.rows[0];
         })
