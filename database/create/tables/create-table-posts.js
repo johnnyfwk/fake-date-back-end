@@ -4,6 +4,7 @@ function createTablePosts() {
     const queryString = `
         CREATE TABLE posts (
             post_id SERIAL PRIMARY KEY,
+            post_date VARCHAR(50),
             destination VARCHAR(100),
             arrival_date VARCHAR(20),
             departure_date VARCHAR(20),

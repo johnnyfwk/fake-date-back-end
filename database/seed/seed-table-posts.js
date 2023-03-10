@@ -4,13 +4,13 @@ const format = require("pg-format");
 
 function seedTablePosts(posts) {
     const queryValues = posts.map((post) => {
-        const postArray = [post.destination, post.arrivalDate, post.departureDate, post.description, post.userId];
+        const postArray = [post.postDate, post.destination, post.arrivalDate, post.departureDate, post.description, post.userId];
         return postArray;
     })
 
     const queryStringAndValues = format(`
         INSERT INTO posts
-            (destination, arrival_date, departure_date, description, user_id)
+            (post_date, destination, arrival_date, departure_date, description, user_id)
         VALUES
             %L
         RETURNING *;
