@@ -1,12 +1,17 @@
 You are now connected to database "cotraveller" as user "johnny".
- user_id | username  | password |                    avatar_url                    |        join_date         
----------+-----------+----------+--------------------------------------------------+--------------------------
-       5 | david     | password | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T09:59:42.783Z
-       4 | catherine | password | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T08:59:42.783Z
-       3 | billy     | password | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T07:59:42.783Z
-       2 | abbie     | password | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T06:59:42.783Z
-       1 | johnny    | password | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T05:59:42.783Z
-(5 rows)
+ user_id | username  | password | gender |                    avatar_url                    |        join_date         
+---------+-----------+----------+--------+--------------------------------------------------+--------------------------
+      10 | ian       | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T14:59:42.783Z
+       9 | helen     | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T13:59:42.783Z
+       8 | gary      | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T12:59:42.783Z
+       7 | frank     | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T11:59:42.783Z
+       6 | ellie     | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T10:59:42.783Z
+       5 | david     | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T09:59:42.783Z
+       4 | catherine | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T08:59:42.783Z
+       3 | billy     | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T07:59:42.783Z
+       2 | abbie     | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T06:59:42.783Z
+       1 | johnny    | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T05:59:42.783Z
+(10 rows)
 
  post_id |        post_date         |                destination                | arrival_date | departure_date |                                                     description                                                      | user_id 
 ---------+--------------------------+-------------------------------------------+--------------+----------------+----------------------------------------------------------------------------------------------------------------------+---------

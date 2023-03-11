@@ -18,6 +18,7 @@ function createTableUsers() {
             user_id SERIAL PRIMARY KEY,
             username VARCHAR(20),
             password VARCHAR(20),
+            gender VARCHAR(10),
             avatar_url TEXT,
             join_date VARCHAR(50)
         );
@@ -45,13 +46,13 @@ function createTablePosts() {
 
 function seedTableUsers(users) {
     const queryValues = users.map((user) => {
-        const userArray = [user.username, user.password, user.avatarUrl, user.joinDate];
+        const userArray = [user.username, user.password, user.gender, user.avatarUrl, user.joinDate];
         return userArray;
     })
 
     const queryStringAndValues = format(`
         INSERT INTO users
-            (username, password, avatar_url, join_date)
+            (username, password, gender, avatar_url, join_date)
         VALUES
             %L
         RETURNING *;
