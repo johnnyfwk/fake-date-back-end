@@ -6,7 +6,7 @@ function createTablePosts() {
             post_id SERIAL PRIMARY KEY,
             post_date VARCHAR(50),
             city VARCHAR(50),
-            gender VARCHAR(20),
+            gender_of_date VARCHAR(20),
             date VARCHAR(50),
             occasion VARCHAR(50),
             description TEXT,

@@ -33,7 +33,7 @@ function createTablePosts() {
             post_id SERIAL PRIMARY KEY,
             post_date VARCHAR(50),
             city VARCHAR(50),
-            gender VARCHAR(20),
+            gender_of_date VARCHAR(20),
             date VARCHAR(50),
             occasion VARCHAR(50),
             description TEXT,
@@ -65,13 +65,13 @@ function seedTableUsers(users) {
 
 function seedTablePosts(posts) {
     const queryValues = posts.map((post) => {
-        const postArray = [post.postDate, post.city, post.gender, post.date, post.occasion, post.description, post.userId];
+        const postArray = [post.postDate, post.city, post.genderOfDate, post.date, post.occasion, post.description, post.userId];
         return postArray;
     })
 
     const queryStringAndValues = format(`
         INSERT INTO posts
-            (post_date, city, gender, date, occasion, description, user_id)
+            (post_date, city, gender_of_date, date, occasion, description, user_id)
         VALUES
             %L
         RETURNING *;
