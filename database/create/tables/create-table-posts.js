@@ -5,9 +5,10 @@ function createTablePosts() {
         CREATE TABLE posts (
             post_id SERIAL PRIMARY KEY,
             post_date VARCHAR(50),
-            destination VARCHAR(100),
-            arrival_date VARCHAR(20),
-            departure_date VARCHAR(20),
+            city VARCHAR(50),
+            gender VARCHAR(20),
+            date VARCHAR(50),
+            occasion VARCHAR(50),
             description TEXT,
             user_id INT,
             FOREIGN KEY (user_id) REFERENCES users(user_id)

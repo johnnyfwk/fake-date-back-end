@@ -1,39 +1,29 @@
 You are now connected to database "cotraveller" as user "johnny".
  user_id | username  | password | gender |                    avatar_url                    |        join_date         
 ---------+-----------+----------+--------+--------------------------------------------------+--------------------------
-      10 | ian       | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T14:59:42.783Z
-       9 | helen     | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T13:59:42.783Z
-       8 | gary      | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T12:59:42.783Z
-       7 | frank     | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T11:59:42.783Z
-       6 | ellie     | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T10:59:42.783Z
-       5 | david     | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T09:59:42.783Z
-       4 | catherine | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T08:59:42.783Z
-       3 | billy     | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T07:59:42.783Z
-       2 | abbie     | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T06:59:42.783Z
-       1 | johnny    | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T05:59:42.783Z
+      10 | ian       | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T09:59:42.783Z
+       9 | helen     | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T08:59:42.783Z
+       8 | gary      | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T07:59:42.783Z
+       7 | frank     | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T06:59:42.783Z
+       6 | ellie     | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T05:59:42.783Z
+       5 | david     | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T04:59:42.783Z
+       4 | catherine | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T03:59:42.783Z
+       3 | billy     | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T02:59:42.783Z
+       2 | abbie     | password | female | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T01:59:42.783Z
+       1 | johnny    | password | male   | http://cdn.onlinewebfonts.com/svg/img_258083.png | 2023-03-10T00:59:42.783Z
 (10 rows)
 
- post_id |        post_date         |                destination                | arrival_date | departure_date |                                                     description                                                      | user_id 
----------+--------------------------+-------------------------------------------+--------------+----------------+----------------------------------------------------------------------------------------------------------------------+---------
-      20 | 2023-03-10T20:59:42.783Z | Prague, Praha, Czech Republic             | 27/03/2023   | 03/04/2023     | Anyone want to explore this city with me next week?                                                                  |       5
-      19 | 2023-03-10T19:59:42.783Z | London, England, United Kingdom           | 21/03/2023   | 27/03/2023     | Anyone want to explore this city with me next week?                                                                  |       5
-      18 | 2023-03-10T18:59:42.783Z | Rome, Latium, Italy                       | 05/04/2023   | 20/04/2023     | Anyone want to explore this city with me next week?                                                                  |       5
-      17 | 2023-03-10T17:59:42.783Z | Rio de Janeiro, Rio de Janeiro, Brazil    | 20/03/2023   | 10/04/2023     | Anyone want to explore this city with me next week?                                                                  |       5
-      16 | 2023-03-10T16:59:42.783Z | Copenhagen, Capital Region, Denmark       | 20/04/2023   | 24/04/2023     | Anyone want to explore this city with me next week?                                                                  |       4
-      15 | 2023-03-10T15:59:42.783Z | Barcelona, Catalonia, Spain               | 29/03/2023   | 10/04/2023     | Anyone want to explore this city with me next week?                                                                  |       4
-      14 | 2023-03-10T14:59:42.783Z | Hong Kong, Central and Western, Hong Kong | 12/03/2023   | 22/03/2023     | Anyone want to explore this city with me next week?                                                                  |       4
-      13 | 2023-03-10T13:59:42.783Z | Oslo, Oslo, Norway                        | 27/03/2023   | 29/03/2023     | Anyone want to explore this city with me next week?                                                                  |       4
-      12 | 2023-03-10T12:59:42.783Z | Budapest, Budapest, Hungary               | 22/03/2023   | 27/03/2023     | Anyone want to explore this city with me next week?                                                                  |       3
-      11 | 2023-03-10T11:59:42.783Z | Aberdeen, Scotland, United Kingdom        | 15/03/2023   | 20/03/2023     | Anyone want to explore this city with me next week?                                                                  |       3
-      10 | 2023-03-10T10:59:42.783Z | Amsterdam, North Holland, Netherlands     | 10/04/2023   | 15/04/2023     | Anyone want to explore this city with me next week?                                                                  |       3
-       9 | 2023-03-10T09:59:42.783Z | Rio de Janeiro, Rio de Janeiro, Brazil    | 11/03/2023   | 30/03/2023     | Anyone want to explore this city with me next week?                                                                  |       3
-       8 | 2023-03-10T08:59:42.783Z | Berlin, Berlin, Germany                   | 20/04/2023   | 24/04/2023     | Anyone want to explore this city with me next week?                                                                  |       2
-       7 | 2023-03-10T07:59:42.783Z | Paris, Île-de-France, France              | 10/04/2023   | 14/04/2023     | Anyone want to explore this city with me next week?                                                                  |       2
-       6 | 2023-03-10T06:59:42.783Z | Oslo, Oslo, Norway                        | 27/03/2023   | 03/04/2023     | Anyone want to explore this city with me next week?                                                                  |       2
-       5 | 2023-03-10T05:59:42.783Z | London, England, United Kingdom           | 18/03/2023   | 22/03/2023     | Anyone want to explore this city with me next week?                                                                  |       2
-       4 | 2023-03-10T04:59:42.783Z | Rome, Latium, Italy                       | 10/04/2023   | 16/04/2023     | Finally going to Rome! Anyone want to eat all the lasagne with me?!                                                  |       1
-       3 | 2023-03-10T03:59:42.783Z | Prague, Praha, Czech Republic             | 02/04/2023   | 06/04/2023     | Got a few days to spare so going to Prague to relax. Would like to hang out with anyone who is going there in April. |       1
-       2 | 2023-03-10T02:59:42.783Z | London, England, United Kingdom           | 20/03/2023   | 24/03/2023     | Want to check out all the tourist attractions in London later this month.                                            |       1
-       1 | 2023-03-10T01:59:42.783Z | Aberdeen, Scotland, United Kingdom        | 11/03/2023   | 18/03/2023     | Going to Aberdeen UK for a few days. Anyone going there this week?                                                   |       1
-(20 rows)
+ post_id |        post_date         |    city     | gender |    date    |      occasion       |                                                                                  description                                                                                  | user_id 
+---------+--------------------------+-------------+--------+------------+---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------
+      10 | 2023-03-10T10:59:42.783Z | London      | Female | 2023-03-17 | Birthday            | Found out my ex-girlfriend is taking her new boyfriend to a mutual friend's birthday party so looking for a girl to join me so I don't look like a complete loser.            |      10
+       9 | 2023-03-10T09:59:42.783Z | Hereford    | Female | 2023-03-25 | Wedding             | Have to go to my cousin's wedding in a couple of weeks but still haven't found a plus one yet, so desparately looking for someone who is free on the 25th.                    |       9
+       8 | 2023-03-10T08:59:42.783Z | London      | Female | 2023-03-25 | Party               | I'm going to a friend's party in a couple of weeks and want to look like a lady's man so need a girl to go with.                                                              |       8
+       7 | 2023-03-10T07:59:42.783Z | Londonderry | Female | 2023-03-19 | Activity            | Was meant to go indoor climbing next weekend but my friend has had to pull out so looking for someone to go with.                                                             |       7
+       6 | 2023-03-10T06:59:42.783Z | Exeter      | Male   | 2023-04-08 | Birthday            | My best mate has invited me to her birthday party. She keeps teasing me about being single so I need to pretend to all our friends I now have a hunky boyfriend.              |       6
+       5 | 2023-03-10T05:59:42.783Z | Manchester  | Male   | 2023-03-22 | Confidence Building | I've only been on a few dates in my life and looking for a guy to help me build my confidence.                                                                                |       5
+       4 | 2023-03-10T04:59:42.783Z | Cardiff     | Male   | 2023-03-23 | Double Date         | Not sure why, but my ex-boyfriend has invited me out on a double date. He will be taking his new girlfriend so I need a super handsome guy to join so I can make him jealous. |       4
+       3 | 2023-03-10T03:59:42.783Z | Manchester  | Female | 2023-03-19 | Meet the Parents    | I told my parents I have a girlfriend so need to bring someone to their house to maintain that lie.                                                                           |       3
+       2 | 2023-03-10T02:59:42.783Z | Aberdeen    | Female | 2023-03-11 | Party               | Going to a house party but don't know the host that well so would like to bring someone to keep me company.                                                                   |       2
+       1 | 2023-03-10T01:59:42.783Z | London      | Female | 2023-03-17 | Wedding             | I have a wedding in London next Friday and need someone to pretend to be my girlfriend so I'm not the only one out of my group of friends who is single.                      |       1
+(10 rows)
 

@@ -38,12 +38,12 @@ function getAUserById(userId) {
 function addAUser(newUser) {
     const queryString = `
         INSERT INTO users
-            (username, password, avatar_url, join_date)
+            (username, password, gender, avatar_url, join_date)
         VALUES
-            ($1, $2, $3, $4)
+            ($1, $2, $3, $4, $5)
         RETURNING *;
     `
-    const queryValues = [newUser.username, newUser.password, newUser.avatar_url, newUser.join_date];
+    const queryValues = [newUser.username, newUser.password, newUser.gender, newUser.avatar_url, newUser.join_date];
 
     return db
         .query(queryString, queryValues)
