@@ -108,9 +108,6 @@ function getAllRepliesByPostId(postId) {
     return db
         .query(queryString, queryValue)
         .then((response) => {
-            if (response.rowCount === 0) {
-                return Promise.reject({status: 404, msg: "Post does not exist or there are no replies for the post."});
-            }
             return response.rows;
         })
 }
@@ -150,9 +147,6 @@ function getAllRepliesByUserId(userId) {
     return db
         .query(queryString, queryValue)
         .then((response) => {
-            if (response.rowCount === 0) {
-                return Promise.reject({status: 404, msg: "User does not exist or user has not replied to any posts."});
-            }
             return response.rows;
         })
 }
@@ -235,9 +229,6 @@ function deleteAllRepliesByPostId(postId) {
     return db
         .query(queryString, queryValue)
         .then((response) => {
-            if (response.rowCount === 0) {
-                return Promise.reject({status: 404, msg: "Post does not exist or post does not have any replies."});
-            }
             return response.rows;
         })
 }
@@ -257,9 +248,6 @@ function deleteAllRepliesByUserId(userId) {
     return db
         .query(queryString, queryValue)
         .then((response) => {
-            if (response.rowCount === 0) {
-                return Promise.reject({status: 404, msg: "User does not exist or user has not replied to any posts."});
-            }
             return response.rows;
         })
 }
