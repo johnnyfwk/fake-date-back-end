@@ -101,11 +101,12 @@ function getAllPostsByUserId(userId) {
 }
 
 function createAPost(newPost) {
+    console.log(newPost)
     const queryString = `
         INSERT INTO posts
             (post_date, title, city, gender_of_date, date, occasion, description, user_id)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7)
+            ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING *;
     `
     const queryValues = [newPost.post_date, newPost.title, newPost.city, newPost.gender_of_date, newPost.date, newPost.occasion, newPost.description, newPost.user_id];
