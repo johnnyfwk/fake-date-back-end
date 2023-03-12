@@ -15,6 +15,9 @@
     "dev-create-table-posts": "node ./database/create/tables/create-table-posts.js",
     "dev-drop-table-posts": "node ./database/drop/tables/drop-table-posts.js",
     "dev-seed-table-posts": "node ./database/seed/seed-table-posts.js",
+    "dev-create-table-comments": "node ./database/create/tables/create-table-comments.js",
+    "dev-drop-table-comments": "node ./database/drop/tables/drop-table-comments.js",
+    "dev-seed-table-comments": "node ./database/seed/seed-table-comments.js",
     "dev-drop-create-and-seed-all-tables": "node ./database/all/drop-create-and-seed-all-tables.js"
   },
   "author": "",

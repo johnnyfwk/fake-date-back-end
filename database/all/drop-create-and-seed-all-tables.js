@@ -1,6 +1,12 @@
 const db = require("../connection");
-const { users, posts } = require("../data/development/index");
+const { users, posts, comments } = require("../data/development/index");
 const format = require("pg-format");
+
+// Drop Tables
+function dropTableComments() {
+    return db
+        .query("DROP TABLE IF EXISTS comments;")
+}
 
 function dropTablePosts() {
     return db
@@ -11,7 +17,10 @@ function dropTableUsers() {
     return db
         .query("DROP TABLE IF EXISTS users;")
 }
+// Drop Tables
 
+
+// Create Tables
 function createTableUsers() {
     const queryString = `
         CREATE TABLE users (
@@ -45,6 +54,25 @@ function createTablePosts() {
         .query(queryString)
 }
 
+function createTableComments() {
+    const queryString = `
+        CREATE TABLE comments (
+            comment_id SERIAL PRIMARY KEY,
+            post_date VARCHAR(50),
+            comment VARCHAR(300),
+            user_id INT,
+            post_id INT,
+            FOREIGN KEY (user_id) REFERENCES users(user_id),
+            FOREIGN KEY (post_id) REFERENCES posts(post_id)
+        );
+    `
+    return db
+        .query(queryString)
+}
+// Create Tables
+
+
+// Seed Tables
 function seedTableUsers(users) {
     const queryValues = users.map((user) => {
         const userArray = [user.username, user.password, user.gender, user.avatarUrl, user.joinDate];
@@ -81,8 +109,31 @@ function seedTablePosts(posts) {
         .query(queryStringAndValues)
 }
 
+function seedTableComments(comments) {
+    const queryValues = comments.map((comment) => {
+        const commentArray = [comment.postDate, comment.comment, comment.commentOwnerId, comment.postId];
+        return commentArray;
+    })
+
+    const queryStringAndValues = format(`
+        INSERT INTO comments
+            (post_date, comment, user_id, post_id)
+        VALUES
+            %L
+        RETURNING *;
+    `, queryValues);
+
+    return db
+        .query(queryStringAndValues)
+}
+// Seed Tables
+
+
 function dropCreateAndSeedAllTables() {
-    return dropTablePosts()
+    return dropTableComments()
+        .then(() => {
+            return dropTablePosts()
+        })
         .then(() => {
             return dropTableUsers();
         })
@@ -93,10 +144,16 @@ function dropCreateAndSeedAllTables() {
             return createTablePosts();
         })
         .then(() => {
+            return createTableComments();
+        })
+        .then(() => {
             return seedTableUsers(users);
         })
         .then(() => {
             return seedTablePosts(posts);
+        })
+        .then(() => {
+            return seedTableComments(comments);
         })
         .then(() => {
             db.end();

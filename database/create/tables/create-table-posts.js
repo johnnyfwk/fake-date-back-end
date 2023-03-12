@@ -9,7 +9,7 @@ function createTablePosts() {
             gender_of_date VARCHAR(20),
             date VARCHAR(50),
             occasion VARCHAR(50),
-            description TEXT,
+            description VARCHAR(300),
             user_id INT,
             FOREIGN KEY (user_id) REFERENCES users(user_id)
         );
