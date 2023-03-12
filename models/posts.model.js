@@ -101,7 +101,6 @@ function getAllPostsByUserId(userId) {
 }
 
 function createAPost(newPost) {
-    console.log(newPost)
     const queryString = `
         INSERT INTO posts
             (post_date, title, city, gender_of_date, date, occasion, description, user_id)
