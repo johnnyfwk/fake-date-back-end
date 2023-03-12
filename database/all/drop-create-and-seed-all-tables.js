@@ -59,12 +59,12 @@ function createTableReplies() {
     const queryString = `
         CREATE TABLE replies (
             reply_id SERIAL PRIMARY KEY,
-            post_date VARCHAR(50),
+            reply_date VARCHAR(50),
             reply VARCHAR(300),
-            user_id INT,
             post_id INT,
-            FOREIGN KEY (user_id) REFERENCES users(user_id),
-            FOREIGN KEY (post_id) REFERENCES posts(post_id)
+            user_id INT,
+            FOREIGN KEY (post_id) REFERENCES posts(post_id),
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
         );
     `
     return db
@@ -112,13 +112,13 @@ function seedTablePosts(posts) {
 
 function seedTableReplies(replies) {
     const queryValues = replies.map((reply) => {
-        const replyArray = [reply.postDate, reply.reply, reply.replyOwnerId, reply.postId];
+        const replyArray = [reply.replyDate, reply.reply, reply.postId, reply.replyOwnerId];
         return replyArray;
     })
 
     const queryStringAndValues = format(`
         INSERT INTO replies
-            (post_date, reply, user_id, post_id)
+            (reply_date, reply, post_id, user_id)
         VALUES
             %L
         RETURNING *;

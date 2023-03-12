@@ -21,6 +21,18 @@ const {
 } = require("./controllers/posts.controller");
 
 const {
+    getReplies,
+    getReplyById,
+    getRepliesByPostId,
+    getRepliesByUserId,
+    postReply,
+    editReplyById,
+    deleteReplyById,
+    deleteRepliesByPostId,
+    deleteRepliesByUserId
+} = require("./controllers/replies.controller");
+
+const {
     handle404Errors,
     handleCustomErrors,
     handle500Errors
@@ -43,6 +55,16 @@ app.post("/api/posts", createPost);
 app.patch("/api/posts/:post_id", editPostById);
 app.delete("/api/posts/:post_id", deletePostById);
 app.delete("/api/users/:user_id/posts", deletePostsByUserId);
+
+app.get("/api/replies", getReplies);
+app.get("/api/replies/:reply_id", getReplyById);
+app.get("/api/posts/:post_id/replies", getRepliesByPostId);
+app.get("/api/users/:user_id/replies", getRepliesByUserId);
+app.post("/api/replies", postReply);
+app.patch("/api/replies/:reply_id", editReplyById);
+app.delete("/api/replies/:reply_id", deleteReplyById);
+app.delete("/api/posts/:post_id/replies", deleteRepliesByPostId);
+app.delete("/api/users/:user_id/replies", deleteRepliesByUserId);
 
 app.all("*", handle404Errors);
 
