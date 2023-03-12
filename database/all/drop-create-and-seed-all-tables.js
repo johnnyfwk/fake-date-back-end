@@ -1,11 +1,11 @@
 const db = require("../connection");
-const { users, posts, comments } = require("../data/development/index");
+const { users, posts, replies } = require("../data/development/index");
 const format = require("pg-format");
 
 // Drop Tables
-function dropTableComments() {
+function dropTableReplies() {
     return db
-        .query("DROP TABLE IF EXISTS comments;")
+        .query("DROP TABLE IF EXISTS replies;")
 }
 
 function dropTablePosts() {
@@ -15,7 +15,7 @@ function dropTablePosts() {
 
 function dropTableUsers() {
     return db
-        .query("DROP TABLE IF EXISTS users;")
+        .query("DROP TABLE IF EXISTS users cascade;")
 }
 // Drop Tables
 
@@ -55,12 +55,12 @@ function createTablePosts() {
         .query(queryString)
 }
 
-function createTableComments() {
+function createTableReplies() {
     const queryString = `
-        CREATE TABLE comments (
-            comment_id SERIAL PRIMARY KEY,
+        CREATE TABLE replies (
+            reply_id SERIAL PRIMARY KEY,
             post_date VARCHAR(50),
-            comment VARCHAR(300),
+            reply VARCHAR(300),
             user_id INT,
             post_id INT,
             FOREIGN KEY (user_id) REFERENCES users(user_id),
@@ -110,15 +110,15 @@ function seedTablePosts(posts) {
         .query(queryStringAndValues)
 }
 
-function seedTableComments(comments) {
-    const queryValues = comments.map((comment) => {
-        const commentArray = [comment.postDate, comment.comment, comment.commentOwnerId, comment.postId];
-        return commentArray;
+function seedTableReplies(replies) {
+    const queryValues = replies.map((reply) => {
+        const replyArray = [reply.postDate, reply.reply, reply.replyOwnerId, reply.postId];
+        return replyArray;
     })
 
     const queryStringAndValues = format(`
-        INSERT INTO comments
-            (post_date, comment, user_id, post_id)
+        INSERT INTO replies
+            (post_date, reply, user_id, post_id)
         VALUES
             %L
         RETURNING *;
@@ -131,9 +131,9 @@ function seedTableComments(comments) {
 
 
 function dropCreateAndSeedAllTables() {
-    return dropTableComments()
+    return dropTableReplies()    
         .then(() => {
-            return dropTablePosts()
+            return dropTablePosts();
         })
         .then(() => {
             return dropTableUsers();
@@ -145,7 +145,7 @@ function dropCreateAndSeedAllTables() {
             return createTablePosts();
         })
         .then(() => {
-            return createTableComments();
+            return createTableReplies();
         })
         .then(() => {
             return seedTableUsers(users);
@@ -154,7 +154,7 @@ function dropCreateAndSeedAllTables() {
             return seedTablePosts(posts);
         })
         .then(() => {
-            return seedTableComments(comments);
+            return seedTableReplies(replies);
         })
         .then(() => {
             db.end();

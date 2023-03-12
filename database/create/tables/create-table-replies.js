@@ -1,11 +1,11 @@
 const db = require("../../connection");
 
-function createTableComments() {
+function createTableReplies() {
     const queryString = `
-        CREATE TABLE comments (
-            comment_id SERIAL PRIMARY KEY,
+        CREATE TABLE replies (
+            reply_id SERIAL PRIMARY KEY,
             post_date VARCHAR(50),
-            comment VARCHAR(300),
+            reply VARCHAR(300),
             user_id INT,
             post_id INT,
             FOREIGN KEY (user_id) REFERENCES users(user_id),
@@ -16,11 +16,11 @@ function createTableComments() {
         .query(queryString)
 }
 
-const runCreateTableComments = () => {
-    return createTableComments()
+const runCreateTableReplies = () => {
+    return createTableReplies()
         .then(() => {
             db.end()
         })
 }
 
-runCreateTableComments();
+runCreateTableReplies();
