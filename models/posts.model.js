@@ -5,6 +5,7 @@ function getAllPosts() {
         SELECT
             posts.post_id,
             posts.post_date,
+            posts.title,
             posts.city,
             posts.gender_of_date,
             posts.date,
@@ -35,6 +36,7 @@ function getAPostById(postId) {
         SELECT
             posts.post_id,
             posts.post_date,
+            posts.title,
             posts.city,
             posts.gender_of_date,
             posts.date,
@@ -70,6 +72,7 @@ function getAllPostsByUserId(userId) {
         SELECT
             posts.post_id,
             posts.post_date,
+            posts.title,
             posts.city,
             posts.gender_of_date,
             posts.date,
@@ -100,12 +103,12 @@ function getAllPostsByUserId(userId) {
 function createAPost(newPost) {
     const queryString = `
         INSERT INTO posts
-            (post_date, city, gender_of_date, date, occasion, description, user_id)
+            (post_date, title, city, gender_of_date, date, occasion, description, user_id)
         VALUES
             ($1, $2, $3, $4, $5, $6, $7)
         RETURNING *;
     `
-    const queryValues = [newPost.post_date, newPost.city, newPost.gender_of_date, newPost.date, newPost.occasion, newPost.description, newPost.user_id];
+    const queryValues = [newPost.post_date, newPost.title, newPost.city, newPost.gender_of_date, newPost.date, newPost.occasion, newPost.description, newPost.user_id];
 
     return db
         .query(queryString, queryValues)
@@ -122,15 +125,16 @@ function editAPostById(postId, postsNewInfo) {
     const queryString = `
         UPDATE posts
         SET
-            city = $1,
-            gender_of_date = $2,
-            date = $3,
-            occasion = $4,
-            description = $5
-        WHERE post_id = $6
+            title = $1,
+            city = $2,
+            gender_of_date = $3,
+            date = $4,
+            occasion = $5,
+            description = $6
+        WHERE post_id = $7
         RETURNING *;
     `
-    const queryValues = [postsNewInfo.city, postsNewInfo.gender_of_date, postsNewInfo.date, postsNewInfo.occasion, postsNewInfo.description, postId];
+    const queryValues = [postsNewInfo.title, postsNewInfo.city, postsNewInfo.gender_of_date, postsNewInfo.date, postsNewInfo.occasion, postsNewInfo.description, postId];
 
     return db
         .query(queryString, queryValues)
