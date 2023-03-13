@@ -93,9 +93,6 @@ function getAllPostsByUserId(userId) {
     return db
         .query(queryString, queryValue)
         .then((response) => {
-            if (response.rowCount === 0) {
-                return Promise.reject({status: 404, msg: "User does not exist or user has not made any posts."});
-            }
             return response.rows;
         })
 }
