@@ -27,10 +27,27 @@ You are now connected to database "cotraveller" as user "johnny".
        1 | 2023-03-10T01:59:42.783Z | Need a fake GF for friend's wedding next Friday   | London      | Female         | 2023-03-17 | Wedding             | I have a wedding in London next Friday and need someone to pretend to be my girlfriend so I'm not the only one out of my group of friends who is single.                      |       1
 (10 rows)
 
- reply_id |        reply_date        |                                                                    reply                                                                     | post_id | user_id 
-----------+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------+---------
-        3 | 2023-03-11T04:59:42.783Z | Hi Ellie. I'm not a hunk but free on that date and can pump iron in the gym every day to look good for your best friend's birthday party.    |       6 |       1
-        2 | 2023-03-11T03:59:42.783Z | OMG!!! I love weddings! I'll come with you. I'm not buying a wedding gift for your friend though.                                            |       1 |       6
-        1 | 2023-03-11T02:59:42.783Z | Hi Johnny. I'll pretend to be your girlfriend at your friend's wedding. I bought a new dress a couple of weeks ago and I'm dying to wear it! |       1 |       2
-(3 rows)
+ reply_id |        reply_date        |                                                                                     reply                                                                                      | post_id | user_id 
+----------+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+---------
+       20 | 2023-03-11T05:59:42.783Z | Hi Catherine. I'm not handsome but have really good banter. I'm up for going on your double date.                                                                              |       4 |      10
+       19 | 2023-03-11T05:59:42.783Z | Hi Ellie. I'm free that day. What time is your friend's birthday party?                                                                                                        |       6 |      10
+       18 | 2023-03-11T05:59:42.783Z | Hey Frank. I've just started climbing so would love to join you.                                                                                                               |       7 |       9
+       17 | 2023-03-11T05:59:42.783Z | Hey Gary. Take me with you to your friend's party and everyone will think you are a stallion.                                                                                  |       8 |       9
+       16 | 2023-03-11T05:59:42.783Z | I'm a model with really defined facial features and a six pack so I will make your ex-boyfriend jealous.                                                                       |       4 |       8
+       15 | 2023-03-11T05:59:42.783Z | I'm a proper ladies man. Want to take me to your friend's birthday party?                                                                                                      |       6 |       8
+       14 | 2023-03-11T05:59:42.783Z | Hi David. I know Manchester quite well so can show you around and we can go for a drink and play some pool to help you build your confidence.                                  |       5 |       7
+       13 | 2023-03-11T05:59:42.783Z | Hi Catherine. I live in Cardiff so can join you on your double date with your ex-bf. Seeing you with me will make him want you back.                                           |       4 |       7
+       12 | 2023-03-11T05:59:42.783Z | Don't worry Ian, I can come with you to your friend's birthday party and not make you look like a loser in front of your ex-girlfriend!                                        |      10 |       6
+       11 | 2023-03-11T05:59:42.783Z | OMG!!! I love weddings! I'll come with you. I'm not buying a wedding gift for your friend though.                                                                              |       1 |       6
+       10 | 2023-03-11T05:59:42.783Z | Hi Ellie. I do a lot of climbing so I'm quite hunky. I'm looking to build my confidence in dating so would love to join you at your friend's party.                            |       6 |       5
+        9 | 2023-03-11T05:59:42.783Z | I'm really good at indoor climbing so I'm up for this.                                                                                                                         |       7 |       5
+        8 | 2023-03-11T05:59:42.783Z | Hi Billy. I'm a great actor so your parents will definitely think I'm your new girlfriend.                                                                                     |       3 |       4
+        7 | 2023-03-11T05:59:42.783Z | Hi Abbie. I've always wanted to visit Aberdeen so I can come to your friend's house party.                                                                                     |       2 |       4
+        6 | 2023-03-11T05:59:42.783Z | Hi Catherine. I'm the most handsome guy on my street so I will make your ex-boyfriend jealous and angry by making his current girlfriend fall in love with me.                 |       4 |       3
+        5 | 2023-03-11T05:59:42.783Z | My mum and gran tell me I'm a hunk so I can be that person you bring to your friend's birthday party.                                                                          |       6 |       3
+        4 | 2023-03-11T04:59:42.783Z | Hey Helen. I'm free on the 25th to be your plus one at your cousin's wedding.                                                                                                  |       9 |       2
+        3 | 2023-03-11T03:59:42.783Z | Hi Johnny. I'll pretend to be your girlfriend at your friend's wedding. I bought a new dress a couple of weeks ago and I'm dying to wear it!                                   |       1 |       2
+        2 | 2023-03-11T02:59:42.783Z | Hi Catherine. I can join you on your date date. I am super charming so will make your ex-boyfriend jealous.                                                                    |       4 |       1
+        1 | 2023-03-11T01:59:42.783Z | Hi Ellie. I'm not a hunk but free on that date. I have a little bit of a beer belly but can pump iron in the gym every day to look good for your best friend's birthday party. |       6 |       1
+(20 rows)
 
