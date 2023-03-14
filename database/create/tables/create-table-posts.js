@@ -5,6 +5,7 @@ function createTablePosts() {
         CREATE TABLE posts (
             post_id SERIAL PRIMARY KEY,
             post_date VARCHAR(50),
+            post_updated VARCHAR(50),
             title VARCHAR(50),
             city VARCHAR(50),
             gender_of_date VARCHAR(20),
