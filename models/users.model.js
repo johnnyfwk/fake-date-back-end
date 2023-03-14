@@ -60,12 +60,12 @@ function editAUserById(userId, usersNewInfo) {
     const queryString = `
         UPDATE users
         SET
-            password = $1,
+            gender = $1,
             avatar_url = $2
         WHERE user_id = $3
         RETURNING *;
     `
-    const queryValues = [usersNewInfo.password, usersNewInfo.avatar_url, userId];
+    const queryValues = [usersNewInfo.gender, usersNewInfo.avatar_url, userId];
 
     return db
         .query(queryString, queryValues)
