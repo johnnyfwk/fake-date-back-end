@@ -5,6 +5,7 @@ function getAllPosts() {
         SELECT
             posts.post_id,
             posts.post_date,
+            posts.post_updated,
             posts.title,
             posts.city,
             posts.gender_of_date,
@@ -18,7 +19,7 @@ function getAllPosts() {
         FROM posts
         JOIN users
         ON posts.user_id = users.user_id
-        ORDER BY post_id DESC;
+        ORDER BY post_updated DESC;
     `
     return db
         .query(queryString)
@@ -36,6 +37,7 @@ function getAPostById(postId) {
         SELECT
             posts.post_id,
             posts.post_date,
+            posts.post_updated,
             posts.title,
             posts.city,
             posts.gender_of_date,
@@ -72,6 +74,7 @@ function getAllPostsByUserId(userId) {
         SELECT
             posts.post_id,
             posts.post_date,
+            posts.post_updated,
             posts.title,
             posts.city,
             posts.gender_of_date,
@@ -86,7 +89,7 @@ function getAllPostsByUserId(userId) {
         JOIN users
         ON posts.user_id = users.user_id
         WHERE posts.user_id = $1
-        ORDER BY post_id DESC;
+        ORDER BY posts.post_updated DESC;
     `
     const queryValue = [userId];
 
@@ -100,12 +103,12 @@ function getAllPostsByUserId(userId) {
 function createAPost(newPost) {
     const queryString = `
         INSERT INTO posts
-            (post_date, title, city, gender_of_date, date, occasion, description, user_id)
+            (post_date, post_updated, title, city, gender_of_date, date, occasion, description, user_id)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING *;
     `
-    const queryValues = [newPost.post_date, newPost.title, newPost.city, newPost.gender_of_date, newPost.date, newPost.occasion, newPost.description, newPost.user_id];
+    const queryValues = [newPost.post_date, newPost.post_updated, newPost.title, newPost.city, newPost.gender_of_date, newPost.date, newPost.occasion, newPost.description, newPost.user_id];
 
     return db
         .query(queryString, queryValues)
@@ -122,16 +125,17 @@ function editAPostById(postId, postsNewInfo) {
     const queryString = `
         UPDATE posts
         SET
-            title = $1,
-            city = $2,
-            gender_of_date = $3,
-            date = $4,
-            occasion = $5,
-            description = $6
-        WHERE post_id = $7
+            post_updated = $1,
+            title = $2,
+            city = $3,
+            gender_of_date = $4,
+            date = $5,
+            occasion = $6,
+            description = $7
+        WHERE post_id = $8
         RETURNING *;
     `
-    const queryValues = [postsNewInfo.title, postsNewInfo.city, postsNewInfo.gender_of_date, postsNewInfo.date, postsNewInfo.occasion, postsNewInfo.description, postId];
+    const queryValues = [postsNewInfo.post_updated, postsNewInfo.title, postsNewInfo.city, postsNewInfo.gender_of_date, postsNewInfo.date, postsNewInfo.occasion, postsNewInfo.description, postId];
 
     return db
         .query(queryString, queryValues)
