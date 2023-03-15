@@ -33,6 +33,10 @@ const {
 } = require("./controllers/replies.controller");
 
 const {
+    getMessages
+} = require("./controllers/messages.controller");
+
+const {
     handle404Errors,
     handleCustomErrors,
     handle500Errors
@@ -65,6 +69,8 @@ app.patch("/api/replies/:reply_id", editReplyById);
 app.delete("/api/replies/:reply_id", deleteReplyById);
 app.delete("/api/posts/:post_id/replies", deleteRepliesByPostId);
 app.delete("/api/users/:user_id/replies", deleteRepliesByUserId);
+
+app.get("/api/messages", getMessages);
 
 app.all("*", handle404Errors);
 
