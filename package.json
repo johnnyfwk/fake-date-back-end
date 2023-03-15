@@ -8,7 +8,6 @@
     "dev": "nodemon listen.js",
     "dev-create-database": "psql -f ./database/create/database/create-database.sql",
     "dev-drop-database": "psql -f ./database/drop/database/drop-database.sql",
-    "dev-check-tables": "psql -f ./database/check/check-tables.sql > ./database/check/development-check-tables.txt",
     "dev-create-table-users": "node ./database/create/tables/create-table-users.js",
     "dev-drop-table-users": "node ./database/drop/tables/drop-table-users.js",
     "dev-seed-table-users": "node ./database/seed/seed-table-users.js",
@@ -18,7 +17,11 @@
     "dev-create-table-replies": "node ./database/create/tables/create-table-replies.js",
     "dev-drop-table-replies": "node ./database/drop/tables/drop-table-replies.js",
     "dev-seed-table-replies": "node ./database/seed/seed-table-replies.js",
-    "dev-drop-create-and-seed-all-tables": "node ./database/all/drop-create-and-seed-all-tables.js"
+    "dev-create-table-messages": "node ./database/create/tables/create-table-messages.js",
+    "dev-drop-table-messages": "node ./database/drop/tables/drop-table-messages.js",
+    "dev-seed-table-messages": "node ./database/seed/seed-table-messages.js",
+    "dev-drop-create-and-seed-all-tables": "node ./database/all/drop-create-and-seed-all-tables.js",
+    "dev-check-tables": "psql -f ./database/check/check-tables.sql > ./database/check/development-check-tables.txt"
   },
   "author": "",
   "license": "ISC",
