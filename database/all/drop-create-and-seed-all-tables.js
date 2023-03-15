@@ -1,8 +1,13 @@
 const db = require("../connection");
-const { users, posts, replies } = require("../data/development/index");
+const { users, posts, replies, messages } = require("../data/development/index");
 const format = require("pg-format");
 
 // Drop Tables
+function dropTableMessages() {
+    return db
+        .query("DROP TABLE IF EXISTS messages;")
+}
+
 function dropTableReplies() {
     return db
         .query("DROP TABLE IF EXISTS replies;")
@@ -71,6 +76,22 @@ function createTableReplies() {
     return db
         .query(queryString)
 }
+
+function createTableMessages() {
+    const queryString = `
+        CREATE TABLE messages (
+            message_id SERIAL PRIMARY KEY,
+            message_date VARCHAR(50),
+            message TEXT,
+            sender_user_id INT,
+            receiver_user_id INT,
+            FOREIGN KEY (sender_user_id) REFERENCES users(user_id),
+            FOREIGN KEY (receiver_user_id) REFERENCES users(user_id)
+        );
+    `
+    return db
+        .query(queryString)
+}
 // Create Tables
 
 
@@ -128,11 +149,32 @@ function seedTableReplies(replies) {
     return db
         .query(queryStringAndValues)
 }
+
+function seedTableMessages(messages) {
+    const queryValues = messages.map((message) => {
+        const messageArray = [message.messageDate, message.message, message.senderUserId, message.receiverUserId];
+        return messageArray;
+    })
+
+    const queryStringAndValues = format(`
+        INSERT INTO messages
+            (message_date, message, sender_user_id, receiver_user_id)
+        VALUES
+            %L
+        RETURNING *;
+    `, queryValues);
+
+    return db
+        .query(queryStringAndValues)
+}
 // Seed Tables
 
 
 function dropCreateAndSeedAllTables() {
-    return dropTableReplies()    
+    return dropTableMessages() 
+        .then(() => {
+            return dropTableReplies();
+        })   
         .then(() => {
             return dropTablePosts();
         })
@@ -149,6 +191,9 @@ function dropCreateAndSeedAllTables() {
             return createTableReplies();
         })
         .then(() => {
+            return createTableMessages();
+        })
+        .then(() => {
             return seedTableUsers(users);
         })
         .then(() => {
@@ -156,6 +201,9 @@ function dropCreateAndSeedAllTables() {
         })
         .then(() => {
             return seedTableReplies(replies);
+        })
+        .then(() => {
+            return seedTableMessages(messages);
         })
         .then(() => {
             db.end();
