@@ -84,7 +84,11 @@ function createTableMessages() {
             message_date VARCHAR(50),
             message TEXT,
             sender_user_id INT,
+            sender_username VARCHAR(20),
+            sender_avatar_url TEXT,
             receiver_user_id INT,
+            receiver_username VARCHAR(20),
+            receiver_avatar_url TEXT,
             FOREIGN KEY (sender_user_id) REFERENCES users(user_id),
             FOREIGN KEY (receiver_user_id) REFERENCES users(user_id)
         );
@@ -152,13 +156,13 @@ function seedTableReplies(replies) {
 
 function seedTableMessages(messages) {
     const queryValues = messages.map((message) => {
-        const messageArray = [message.messageDate, message.message, message.senderUserId, message.receiverUserId];
+        const messageArray = [message.messageDate, message.message, message.senderUserId, message.senderUsername, message.senderAvatarUrl, message.receiverUserId, message.receiverUsername, message.receiverAvatarUrl];
         return messageArray;
     })
 
     const queryStringAndValues = format(`
         INSERT INTO messages
-            (message_date, message, sender_user_id, receiver_user_id)
+            (message_date, message, sender_user_id, sender_username, sender_avatar_url, receiver_user_id, receiver_username, receiver_avatar_url)
         VALUES
             %L
         RETURNING *;
