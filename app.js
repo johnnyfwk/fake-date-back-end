@@ -33,7 +33,13 @@ const {
 } = require("./controllers/replies.controller");
 
 const {
-    getMessages
+    getMessages,
+    getMessageById,
+    getMessagesByUserId,
+    sendMessage,
+    editMessage,
+    deleteMessageById,
+    deleteMessagesByUserId
 } = require("./controllers/messages.controller");
 
 const {
@@ -71,6 +77,12 @@ app.delete("/api/posts/:post_id/replies", deleteRepliesByPostId);
 app.delete("/api/users/:user_id/replies", deleteRepliesByUserId);
 
 app.get("/api/messages", getMessages);
+app.get("/api/messages/:message_id", getMessageById);
+app.get("/api/users/:user_id/messages", getMessagesByUserId);
+app.post("/api/messages", sendMessage);
+app.patch("/api/messages/:message_id", editMessage);
+app.delete("/api/messages/:message_id", deleteMessageById);
+app.delete("/api/users/:user_id/messages", deleteMessagesByUserId);
 
 app.all("*", handle404Errors);
 
