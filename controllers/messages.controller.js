@@ -1,7 +1,8 @@
 const {
     getAllMessages,
     getAMessageById,
-    getAllMessagesByUserId,
+    getAllMessagesByUserIdDesc,
+    getAllMessagesByUserIdAsc,
     sendAMessage,
     editAMessage,
     deleteAMessageById,
@@ -28,8 +29,18 @@ function getMessageById(request, response, next) {
         })
 }
 
-function getMessagesByUserId(request, response, next) {
-    getAllMessagesByUserId(request.params.user_id)
+function getMessagesByUserIdDesc(request, response, next) {
+    getAllMessagesByUserIdDesc(request.params.user_id)
+        .then((messages) => {
+            response.status(200).send({messages})
+        })
+        .catch((error) => {
+            next(error);
+        })
+}
+
+function getMessagesByUserIdAsc(request, response, next) {
+    getAllMessagesByUserIdAsc(request.params.user_id)
         .then((messages) => {
             response.status(200).send({messages})
         })
@@ -81,7 +92,8 @@ function deleteMessagesByUserId(request, response, next) {
 module.exports = {
     getMessages,
     getMessageById,
-    getMessagesByUserId,
+    getMessagesByUserIdDesc,
+    getMessagesByUserIdAsc,
     sendMessage,
     editMessage,
     deleteMessageById,

@@ -35,7 +35,8 @@ const {
 const {
     getMessages,
     getMessageById,
-    getMessagesByUserId,
+    getMessagesByUserIdDesc,
+    getMessagesByUserIdAsc,
     sendMessage,
     editMessage,
     deleteMessageById,
@@ -78,7 +79,8 @@ app.delete("/api/users/:user_id/replies", deleteRepliesByUserId);
 
 app.get("/api/messages", getMessages);
 app.get("/api/messages/:message_id", getMessageById);
-app.get("/api/users/:user_id/messages", getMessagesByUserId);
+app.get("/api/users/:user_id/messages_desc", getMessagesByUserIdDesc);
+app.get("/api/users/:user_id/messages_asc", getMessagesByUserIdAsc);
 app.post("/api/messages", sendMessage);
 app.patch("/api/messages/:message_id", editMessage);
 app.delete("/api/messages/:message_id", deleteMessageById);

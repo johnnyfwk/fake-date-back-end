@@ -35,7 +35,7 @@ function getAMessageById(messageId) {
         })
 }
 
-function getAllMessagesByUserId(userId) {
+function getAllMessagesByUserIdDesc(userId) {
     if (isNaN(userId)) {
         return Promise.reject({status: 400, msg: "Please enter a valid user ID."});
     }
@@ -48,6 +48,29 @@ function getAllMessagesByUserId(userId) {
         OR
             receiver_user_id = $1
         ORDER BY message_id DESC;
+    `
+    const queryValue = [userId];
+
+    return db
+        .query(queryString, queryValue)
+        .then((response) => {
+            return response.rows;
+        })
+}
+
+function getAllMessagesByUserIdAsc(userId) {
+    if (isNaN(userId)) {
+        return Promise.reject({status: 400, msg: "Please enter a valid user ID."});
+    }
+
+    const queryString = `
+        SELECT *
+        FROM messages
+        WHERE
+            sender_user_id = $1
+        OR
+            receiver_user_id = $1
+        ORDER BY message_id ASC;
     `
     const queryValue = [userId];
 
@@ -149,7 +172,8 @@ function deleteAllMessagesByUserId(userId) {
 module.exports = {
     getAllMessages,
     getAMessageById,
-    getAllMessagesByUserId,
+    getAllMessagesByUserIdDesc,
+    getAllMessagesByUserIdAsc,
     sendAMessage,
     editAMessage,
     deleteAMessageById,
