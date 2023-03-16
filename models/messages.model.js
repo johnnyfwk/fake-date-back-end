@@ -154,7 +154,10 @@ function deleteAllMessagesByUserId(userId) {
 
     const queryString = `
         DELETE FROM messages
-        WHERE sender_user_id = $1
+        WHERE
+            sender_user_id = $1
+        OR
+            receiver_user_id = $1
         RETURNING *;
     `
     const queryValue = [userId];
