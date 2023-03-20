@@ -2,8 +2,9 @@
   "name": "back-end",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "listen.js",
   "scripts": {
+    "start": "node listen.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon listen.js",
     "dev-create-database": "psql -f ./database/create/database/create-database.sql",
@@ -21,7 +22,8 @@
     "dev-drop-table-messages": "node ./database/drop/tables/drop-table-messages.js",
     "dev-seed-table-messages": "node ./database/seed/seed-table-messages.js",
     "dev-drop-create-and-seed-all-tables": "node ./database/all/drop-create-and-seed-all-tables.js",
-    "dev-check-tables": "psql -f ./database/check/check-tables.sql > ./database/check/development-check-tables.txt"
+    "dev-check-tables": "psql -f ./database/check/check-tables.sql > ./database/check/development-check-tables.txt",
+    "prod-drop-create-and-seed-all-tables": "NODE_ENV=production npm run dev-drop-create-and-seed-all-tables"
   },
   "author": "",
   "license": "ISC",
