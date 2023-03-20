@@ -1,1 +1,1 @@
-DROP DATABASE IF EXISTS cotraveller;
+DROP DATABASE IF EXISTS fakedate;

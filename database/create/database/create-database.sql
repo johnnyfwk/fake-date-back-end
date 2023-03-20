@@ -1,1 +1,1 @@
-CREATE DATABASE cotraveller;
+CREATE DATABASE fakedate;
