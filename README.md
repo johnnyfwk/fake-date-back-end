@@ -4,7 +4,7 @@ It was built built using PostgreSQL, Express, React, and Node.js.
 
 Live URL: https://fakedate.co.uk
 
-The back end is an Express API (Hosted URL: https://fake-date.onrender.com/api) that supplies the front end (Github: https://github.com/johnnyfwk/fake-date-front-end) with user, post, reply, and message data stored in PostgreSQL.
+The back end is an Express API that supplies the front end (Github: https://github.com/johnnyfwk/fake-date-front-end) with user, post, reply, and message data stored in PostgreSQL (Hosted URL: https://fake-date.onrender.com/api).
 
 To clone this repo:
 - go to https://github.com/johnnyfwk/fake-date-back-end;
