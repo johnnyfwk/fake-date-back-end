@@ -27,4 +27,4 @@ To create and seed all tables:
 
 To run the project:
 - in the front end api.js file located in the 'src' folder, change the baseUrl to 'http://localhost:9090/api';
-- in Terminal, type 'npm run dev'.
+- in Terminal, type 'npm run dev' to start listening to API requests.
