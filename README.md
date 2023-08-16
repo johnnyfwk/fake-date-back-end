@@ -22,9 +22,17 @@ To connect to the development database and run the project, a development enviro
 - at repo root level, create a .env file named '.env.development';
 - In this file, type in 'PGDATABASE=fakedate'.
 
+To create the Higher or Lower database:
+- in Terminal, type 'npm run dev-create-database'.
+
 To create and seed all tables:
 - in Terminal, type 'npm run dev-drop-create-and-seed-all-tables'.
 
 To run the project:
-- in the front end api.js file located in the 'src' folder, change the baseUrl to 'http://localhost:9090/api';
 - in Terminal, type 'npm run dev' to start listening to API requests.
+
+To view the JSON data for users, posts, replies, and comments, go to their corresponding endpoint:
+- Users: 'http://localhost:9090/api/users';
+- Posts: 'http://localhost:9090/api/posts';
+- Replies: 'http://localhost:9090/api/replies';
+- Messages: 'http://localhost:9090/api/messages'.
