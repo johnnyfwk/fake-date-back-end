@@ -22,7 +22,7 @@ To connect to the development database and run the project, a development enviro
 - at repo root level, create a .env file named '.env.development';
 - In this file, type in 'PGDATABASE=fakedate'.
 
-To create the Higher or Lower database:
+To create the database:
 - in Terminal, type 'npm run dev-create-database'.
 
 To create and seed all tables:
